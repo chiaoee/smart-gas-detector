@@ -1,0 +1,465 @@
+body {
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('https://raw.githubusercontent.com/chiaoee/smart-gas-detector/main/gasBackground.png'); /* Background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+    color: white; /* Text color for visibility */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center align text */
+}
+
+.panel {
+    width: 96vw; /* Make width dynamic relative to viewport width */
+    height: 9vh; /* Keep height dynamic based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out items to the left and right */
+    padding: 0 2vw; /* Responsive padding */
+    color: black; /* Text color for the panel */
+    font-size: 2vw; /* Make the font size responsive */
+    position: relative; /* Positioning context for panel */
+    /*z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel .title {
+    font-size: 2.5vw; /* Font size based on viewport width */
+    font-weight: bold;
+    position: absolute; /* Absolute positioning */
+    left: 10px; /* Position it 10px from the left */
+} 
+
+.panel .setting-icon {
+    font-size: 3vw; /* Make the icon size responsive */
+    position: absolute; /* Absolute positioning */
+    right: 10px; /* Position it 10px from the right */
+    cursor: pointer; /* Add a pointer cursor */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+.panel2 {
+    width: 25%; /* Full width of the viewport */
+    height: 16vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: space-betwen; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: black; /* Text color for the panel */
+    font-size: 2vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 25px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel2 .title {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold; /* Make title bold */
+    margin-top: 10px; /* Control vertical spacing from the top */
+    text-align: center; /* Center the text */
+}
+
+.panel2 .ppm-value {
+    font-size: 2.4vw; /* Larger font size for PPM value */
+    margin-top: 13px; /* Space between the title and PPM value */
+    text-align: center; /* Center the text */
+}
+
+.panel3 {
+    width: 30%; /* Full width of the viewport */
+    height: 48vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: space-betwen; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: black; /* Text color for the panel */
+    font-size: 2vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 20px; 
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel3 .noti {
+    font-size: 1.5vw; /* Larger font size */
+    margin-top: 10px; 
+    text-align: center; /* Center the text */
+    text-decoration: underline; /* Add underline */
+}
+
+.panel3 .history {
+    font-size: 1.5vw; /* Larger font size */
+    margin-top: 15px; 
+    text-align: center; /* Center the text */
+    text-decoration: underline; /* Add underline */
+}
+
+.panel3 .newPanel {
+    width: 90%; /* Full width of the viewport */
+    height: 17vh; /* Height based on viewport height */
+    background-color: rgb(168, 167, 167); /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: black; /* Text color for the panel */
+    font-size: 1.5vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 5px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel3 .newPanel .first-line {
+    color: red; /* Red color for the first line */
+    text-align: center; /* Center the first line */
+    font-size: 2vw; 
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.panel3 .newPanel .second-line {
+    color: black; /* Black color for the second line */
+    text-align: center; /* Left-align the second line */
+    font-size: 1.5vw;
+    margin-top: 0px; /* Optional spacing from the first line */
+}
+
+.panel-container {
+    width: 32%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    display: flex; /* Use Flexbox to arrange children horizontally */
+    justify-content: space-between; /* Optional: Add space between panels */
+    margin-top: 10px; /* Space from the top */
+}
+
+.panel-container .panel4 {
+    width: 60%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: black; /* Text color for the panel */
+    font-size: 2vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel-container .panel4 .valveOpen {
+    font-size: 2vw; /* Larger font size */
+    margin-top: 5px; 
+    text-align: center; /* Center the text */
+    font-weight: bold; 
+}
+
+.panel-container .panel5 {
+    width: 60%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: black; /* Text color for the panel */
+    font-size: 2vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-left: 60px;
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.panel-container .panel5 .alarm {
+    font-size: 2vw; /* Larger font size */
+    margin-top: 5px; 
+    text-align: center; /* Center the text */
+    font-weight: bold; 
+}
+
+
+/* Slider Toggle Styles */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 15px; /* Add margin for spacing */
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggle input:checked + .slider {
+    background-color: #21f35d;
+}
+
+.toggle input:not(:checked) + .slider {
+    background-color: red; /* Change to red when off */
+}
+
+.toggle input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* Modal styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000; /* Ensure it's above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(5px); /* Apply a blur effect to simulate page transition */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Modal content styling */
+.modal-content {
+    margin-top: 15px; /* Adjust to add space from the top */
+    font-size: 2.2vw; /* Responsive font size */
+    font-weight: bold;
+    text-align: center;
+    display: flex; /* Ensure it's a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    font-size: 50px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Section Titles */
+.modal-content .title {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    margin-top: 15px;
+    color: #929292; /* Darker text for visibility */
+    text-align: center; /* Center the text */
+    text-decoration: underline; /* Add underline */
+}
+
+.modal-content .panel1 {
+    width: 20%; /* Full width of the viewport */
+    height: 10vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 10px; /* Add padding to the left and right sides */
+    color: white; /* Text color for the panel */
+    font-size: 1.5vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 5px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+/* Wrapper for input and label to align them horizontally */
+.modal-content .panel1 .input-row {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    margin-top: 5px; /* Space between text and input field */
+}
+
+/* Styling for number input field */
+.modal-content .panel1 .number-input {
+    width: 100px;
+    padding: 5px;
+    font-size: 1.3vw;
+    font-weight: lighter;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px; /* Space between text and input */
+}
+
+/* Unit label beside the input */
+.modal-content .panel1 .unit-label {
+    font-size: 1.3vw;
+    color: white;
+    font-weight: lighter;
+    margin-left: 10px; /* Space between input and PPM label */
+    margin-top: 5px; /* Align with the input */
+}
+
+.modal-content .panel2 {
+    width: 20%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: white; /* Text color for the panel */
+    font-size: 1.5vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 10px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.modal-content .panel3 {
+    width: 25%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: white; /* Text color for the panel */
+    font-size: 1.6vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 10px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.modal-content .title2 {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    margin-top: 20px;
+    color: #929292; /* Darker text for visibility */
+    text-align: center; /* Center the text */
+    text-decoration: underline; /* Add underline */
+}
+
+.modal-content .panel4 {
+    width: 25%; /* Full width of the viewport */
+    height: 10vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: white; /* Text color for the panel */
+    font-size: 1.6vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 5px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+.modal-content .panel5 {
+    width: 25%; /* Full width of the viewport */
+    height: 14vh; /* Height based on viewport height */
+    background-color: grey; /* Grey background color */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Space out items to the left and right */
+    padding: 0 20px; /* Add padding to the left and right sides */
+    color: white; /* Text color for the panel */
+    font-size: 1.6vw; /* Font size based on viewport width */
+    border-radius: 25px; /* Rounded edges (you can adjust the value for more/less rounding) */
+    position: relative; /* Positioning context for panel */
+    margin-top: 10px; /* Space from the top */
+    z-index: 1; /* Ensure panel is above other content */
+}
+
+/* Slider Toggle Styles */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 1px; /* Add margin for spacing */
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggle input:checked + .slider {
+    background-color: #21f35d;
+}
+
+.toggle input:not(:checked) + .slider {
+    background-color: red; /* Change to red when off */
+}
+
+.toggle input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Gas Detector</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
+</head>
+<body>
+    <div class="panel">
+        <div class="title">SMART GAS DETECTOR</div> <!-- Title aligned to the left -->
+        <i class="fas fa-cog setting-icon"></i> <!--  icon aligned to the right -->
+    </div>
+
+    <div class="panel2" >
+        <div class="title">Current Concentration</div>
+        <div class="ppm-value">10 PPM</div>
+    </div>
+
+    <div class="panel3" >
+        <div class="noti">Notification</div>
+        <div class="history">History</div>
+    </div>
+
+    <div class="panel-container"> <!-- Parent div for both panels -->
+        <div class="panel4">
+            <div class="valveOpen">Valve Open</div>
+            <label class="toggle">
+                <input type="checkbox" checked> <!-- Slider toggle input -->
+                <span class="slider"></span> <!-- Slider toggle span -->
+            </label>
+        </div>
+    
+        <div class="panel5"> <!-- Start of panel5 -->
+            <div class="alarm">Alarm</div>
+            <label class="toggle">
+                <input type="checkbox" checked> <!-- Slider toggle input -->
+                <span class="slider"></span> <!-- Slider toggle span -->
+            </label>
+        </div> <!-- End of panel5 -->
+    </div>
+    
+
+<!-- Modal Structure (Initially hidden) -->
+<div id="overlayModal" class="modal">
+    <div class="modal-content"><div>Setting</div>
+        <div class="close-btn">&times;</div> <!-- Close button -->
+       
+
+        <!-- Gas Detection Section -->
+        <div class="title">GAS DETECTION</div>
+        
+        <div class="panel1">
+            Warning Threshold
+            <div class="input-row">
+                <input type="text" class="number-input" placeholder="Enter value" />
+                <span class="unit-label">PPM</span>
+            </div>
+        </div>
+                     
+        
+        <div class="panel2">
+            <div>Sound alarm if threshold is exceeded</div>
+            <label class="toggle" id="toggle.panel2">
+                <input type="checkbox" id="toggle.panel2.input" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        
+        <div class="panel3">
+            <div>Automatically shut off valve when threshold is exceed</div>
+            <label class="toggle" id="toggle.panel3">
+                <input type="checkbox" id="toggle.panel3.input" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Fire Detection Section -->
+        <div class="title2">FIRE DETECTION</div>
+
+        <div class="panel4">
+            <div>Send SMS if a fire detected</div>
+            <label class="toggle" id="toggle.panel4">
+                <input type="checkbox" id="toggle.panel4.input" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="panel5">
+            <div>Contact fire department if fire detected</div>
+            <label class="toggle" id="toggle.panel5">
+                <input type="checkbox" id="toggle.panel5.input" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
